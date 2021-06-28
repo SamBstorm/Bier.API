@@ -1,6 +1,7 @@
 ﻿using Bier.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
+using Tools;
 
 namespace Bier.DataBase
 {
@@ -8,6 +9,7 @@ namespace Bier.DataBase
     {
         public DbSet<Drink> Drinks { get; set; }
         public DbSet<Brewer> Brewers { get; set; }
+        public DbSet<UserProfile> Users { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -85,6 +87,42 @@ namespace Bier.DataBase
                     Type = DrinkTypes.Pils,
                     BrewerId = 4
                 });
+
+            //Users
+            UserProfile user_1 = new UserProfile
+            {
+                Id = 1,
+                FirstName = "Samuel",
+                LastName = "Legrain",
+                BirthDate = new DateTime(1987, 09, 27),
+                Email = "samuel.legrain@bstorm.be",
+                Salt = Guid.NewGuid().ToString()
+            };
+            user_1.Password = PasswordHasher.Hashing<UserProfile>(user_1, u => "test1234=", u => u.Salt);
+            modelBuilder.Entity<UserProfile>().HasData(user_1);
+            UserProfile user_2 = new UserProfile
+            {
+                Id = 1,
+                FirstName = "Michael",
+                LastName = "Person",
+                BirthDate = new DateTime(1987, 09, 27),
+                Email = "michael.person@bstorm.be",
+                Salt = Guid.NewGuid().ToString()
+            };
+            user_2.Password = PasswordHasher.Hashing<UserProfile>(user_2, u => "test1234=", u => u.Salt);
+            modelBuilder.Entity<UserProfile>().HasData(user_2);
+            UserProfile user_3 = new UserProfile
+            {
+                Id = 1,
+                FirstName = "Khun",
+                LastName = "Lee",
+                BirthDate = new DateTime(1987, 09, 27),
+                Email = "khun.lee@bstorm.be",
+                Salt = Guid.NewGuid().ToString()
+            };
+            user_3.Password = PasswordHasher.Hashing<UserProfile>(user_3, u => "test1234=", u => u.Salt);
+            modelBuilder.Entity<UserProfile>().HasData(user_3);
+
         }
     }
 }

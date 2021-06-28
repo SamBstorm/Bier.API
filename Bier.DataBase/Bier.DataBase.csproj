@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Bier.Models\Bier.Models.csproj" />
+    <ProjectReference Include="..\Tools\Tools.csproj" />
   </ItemGroup>
 
 </Project>
