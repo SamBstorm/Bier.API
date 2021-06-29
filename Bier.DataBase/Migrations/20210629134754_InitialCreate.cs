@@ -78,9 +78,9 @@ namespace Bier.DataBase.Migrations
                 columns: new[] { "Id", "BirthDate", "Email", "FirstName", "LastName", "Password", "Salt" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(1987, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "samuel.legrain@bstorm.be", "Samuel", "Legrain", new byte[] { 75, 106, 45, 246, 69, 176, 192, 197, 114, 36, 113, 113, 247, 139, 231, 164, 21, 207, 133, 208, 153, 69, 81, 85, 230, 82, 1, 175, 136, 116, 224, 249 }, "1b69b7fc-7927-4ec8-8e95-9a81d28a06e4" },
-                    { 2, new DateTime(1987, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "michael.person@bstorm.be", "Michael", "Person", new byte[] { 176, 86, 149, 165, 120, 181, 95, 93, 132, 188, 75, 8, 124, 26, 142, 85, 153, 167, 251, 2, 91, 79, 41, 69, 231, 135, 103, 147, 110, 253, 63, 148 }, "8178b65a-b667-409a-92a9-1afbadccfcbe" },
-                    { 3, new DateTime(1987, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "khun.lee@bstorm.be", "Khun", "Lee", new byte[] { 160, 232, 237, 18, 64, 207, 61, 54, 139, 219, 205, 224, 178, 17, 191, 114, 46, 188, 54, 71, 213, 164, 217, 184, 166, 228, 63, 50, 196, 162, 57, 196 }, "17709b40-6026-4250-9c87-e2dc2170d025" }
+                    { 1, new DateTime(1987, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "samuel.legrain@bstorm.be", "Samuel", "Legrain", new byte[] { 76, 234, 79, 27, 156, 200, 45, 216, 30, 63, 135, 157, 52, 24, 18, 101, 205, 108, 225, 162, 198, 164, 111, 176, 127, 193, 143, 148, 154, 245, 114, 150 }, "6c4f9fee-0592-4d3e-83cb-f6a5eb9a54d0" },
+                    { 2, new DateTime(1987, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "michael.person@bstorm.be", "Michael", "Person", new byte[] { 132, 224, 187, 241, 6, 73, 11, 187, 216, 55, 22, 236, 43, 231, 36, 60, 139, 66, 229, 1, 218, 126, 92, 97, 86, 81, 150, 255, 26, 143, 24, 94 }, "3624bfea-16b3-4234-9d2d-1a167f3dc81c" },
+                    { 3, new DateTime(1987, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "khun.lee@bstorm.be", "Khun", "Lee", new byte[] { 89, 149, 107, 81, 227, 173, 52, 192, 86, 39, 184, 39, 204, 64, 126, 46, 40, 119, 85, 154, 24, 34, 58, 163, 88, 228, 226, 170, 37, 65, 120, 26 }, "f9ea561a-7a1a-42c7-8fd7-8840e89531d8" }
                 });
 
             migrationBuilder.InsertData(

@@ -1,4 +1,6 @@
 using Bier.DataBase;
+using Bier.Services;
+using Bier.Services.Bases;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -28,9 +30,15 @@ namespace Bier.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("BierDB"))
+                    options.UseSqlServer(Configuration.GetConnectionString("BierDB"))
                 );
+
+
             services.AddControllers();
+
+            services.AddScoped<IDrinkRepository, DrinkRepository>();
+            services.AddScoped<IBrewerRepository, BrewerRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Bier.API", Version = "v1" });

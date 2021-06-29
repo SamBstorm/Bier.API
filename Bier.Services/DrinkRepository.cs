@@ -41,6 +41,7 @@ namespace Bier.Services
 
         public Drink Insert(Drink entity)
         {
+            if(entity.Brewer != null) db.Entry(entity.Brewer).State = EntityState.Unchanged;
             EntityEntry<Drink> result = db.Drinks.Add(entity);
             db.SaveChanges();
             return result.Entity;

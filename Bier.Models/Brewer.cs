@@ -14,7 +14,5 @@ namespace Bier.Models
         [Required]
         [MaxLength(32)]
         public string Country { get; set; }
-
-        public IEnumerable<Drink> Drinks { get; set; }
     }
 }
