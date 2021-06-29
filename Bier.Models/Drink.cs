@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bier.Models
 {
-    public class Drink : IDataModel
+    public class Drink : IDataModel<int>
     {
         public int Id { get; set; }
         [Required]

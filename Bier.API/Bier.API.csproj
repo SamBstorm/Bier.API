@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Bier.DataBase\Bier.DataBase.csproj" />
     <ProjectReference Include="..\Bier.Models\Bier.Models.csproj" />
+    <ProjectReference Include="..\Bier.Services\Bier.Services.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

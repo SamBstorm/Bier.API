@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Bier.Models
 {
-    public class Brewer : IDataModel
+    public class Brewer : IDataModel<int>
     {
         public int Id { get; set; }
         [Required]

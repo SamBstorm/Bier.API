@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Bier.Models
 {
-    public interface IDataModel
+    public interface IDataModel<Tid>
     {
-        public int Id { get; }
+        public Tid Id { get; }
     }
 }
