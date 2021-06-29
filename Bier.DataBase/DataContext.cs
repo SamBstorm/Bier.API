@@ -26,7 +26,7 @@ namespace Bier.DataBase
             modelBuilder.Entity<Brewer>().HasData(new Brewer { Id = 4, SocietyName = "Carlsberg", Country = "Danemark" });
 
             //Drinks
-            modelBuilder.Entity<Drink>().HasData(new Drink { Id = 1, Name = "Jupiler", AlcoholIntensity = 5.5, Color = DrinkColors.Blond, Type = DrinkTypes.Pils, BrewerId = 1 });
+            modelBuilder.Entity<Drink>().HasData(new Drink { Id = 1, Name = "Jupiler", AlcoholIntensity = 5.5M, Color = DrinkColors.Blond, Type = DrinkTypes.Pils, BrewerId = 1 });
             modelBuilder.Entity<Drink>().HasData(
                 new Drink
                 {
@@ -42,7 +42,7 @@ namespace Bier.DataBase
                 {
                     Id = 3,
                     Name = "Duvel",
-                    AlcoholIntensity = 6.2,
+                    AlcoholIntensity = 6.2M,
                     Color = DrinkColors.Blond,
                     Type = DrinkTypes.Abbey,
                     BrewerId = 2
@@ -62,7 +62,7 @@ namespace Bier.DataBase
                 {
                     Id = 5,
                     Name = "Heineken",
-                    AlcoholIntensity = 4.5,
+                    AlcoholIntensity = 4.5M,
                     Color = DrinkColors.Blond,
                     Type = DrinkTypes.Pils,
                     BrewerId = 3
@@ -72,7 +72,7 @@ namespace Bier.DataBase
                 {
                     Id = 6,
                     Name = "Heineken Special",
-                    AlcoholIntensity = 4.5,
+                    AlcoholIntensity = 4.5M,
                     Color = DrinkColors.Red,
                     Type = DrinkTypes.Pils,
                     BrewerId = 3
@@ -98,7 +98,7 @@ namespace Bier.DataBase
                 Email = "samuel.legrain@bstorm.be",
                 Salt = Guid.NewGuid().ToString()
             };
-            user_1.Password = PasswordHasher.Hashing<UserProfile>(user_1, u => "test1234=", u => u.Salt);
+            user_1.Password = PasswordHasher.Hashing<UserProfile>(user_1, "test1234=", u => u.Salt);
             modelBuilder.Entity<UserProfile>().HasData(user_1);
             UserProfile user_2 = new UserProfile
             {
@@ -109,7 +109,7 @@ namespace Bier.DataBase
                 Email = "michael.person@bstorm.be",
                 Salt = Guid.NewGuid().ToString()
             };
-            user_2.Password = PasswordHasher.Hashing<UserProfile>(user_2, u => "test1234=", u => u.Salt);
+            user_2.Password = PasswordHasher.Hashing<UserProfile>(user_2, "test1234=", u => u.Salt);
             modelBuilder.Entity<UserProfile>().HasData(user_2);
             UserProfile user_3 = new UserProfile
             {
@@ -120,7 +120,7 @@ namespace Bier.DataBase
                 Email = "khun.lee@bstorm.be",
                 Salt = Guid.NewGuid().ToString()
             };
-            user_3.Password = PasswordHasher.Hashing<UserProfile>(user_3, u => "test1234=", u => u.Salt);
+            user_3.Password = PasswordHasher.Hashing<UserProfile>(user_3, "test1234=", u => u.Salt);
             modelBuilder.Entity<UserProfile>().HasData(user_3);
 
         }
