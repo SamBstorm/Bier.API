@@ -102,7 +102,7 @@ namespace Bier.DataBase
             modelBuilder.Entity<UserProfile>().HasData(user_1);
             UserProfile user_2 = new UserProfile
             {
-                Id = 1,
+                Id = 2,
                 FirstName = "Michael",
                 LastName = "Person",
                 BirthDate = new DateTime(1987, 09, 27),
@@ -113,7 +113,7 @@ namespace Bier.DataBase
             modelBuilder.Entity<UserProfile>().HasData(user_2);
             UserProfile user_3 = new UserProfile
             {
-                Id = 1,
+                Id = 3,
                 FirstName = "Khun",
                 LastName = "Lee",
                 BirthDate = new DateTime(1987, 09, 27),
