@@ -1,21 +1,27 @@
-﻿using Bier.Models;
+﻿using Bier.DataBase;
+using Bier.Models;
 using Bier.Services.Bases;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Bier.Services
 {
-    public class BrewerRepository : IBrewerRepository
+    public class BrewerRepository : RepositoryBase, IBrewerRepository
     {
+        public BrewerRepository(DataContext db) : base(db)
+        {
+        }
+
         public IEnumerable<Brewer> Get()
         {
-            throw new NotImplementedException();
+            return db.Brewers.ToList();
         }
 
         public Brewer Get(int id)
         {
-            throw new NotImplementedException();
+            return db.Brewers.SingleOrDefault(b => b.Id == id);
         }
     }
 }

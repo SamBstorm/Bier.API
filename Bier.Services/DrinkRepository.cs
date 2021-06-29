@@ -10,13 +10,10 @@ using System.Text;
 
 namespace Bier.Services
 {
-    public class DrinkRepository : IDrinkRepository
+    public class DrinkRepository : RepositoryBase, IDrinkRepository
     {
-        private readonly DataContext db;
-
-        public DrinkRepository(DataContext db)
+        public DrinkRepository(DataContext db) : base(db)
         {
-            this.db = db;
         }
 
         public void Delete(int id)
