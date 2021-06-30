@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Bier.Services.Bases
 {
-    public interface IUserRepository : IRepositoryGet<UserProfile,int>
+    public interface IUserRepository : IRepositoryGet<UserPublic,int>
     {
-        public UserProfile Check(string mail, string password);
+        public UserPublic Check(string mail, string password);
     }
 }

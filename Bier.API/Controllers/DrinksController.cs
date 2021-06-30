@@ -120,5 +120,31 @@ namespace Bier.API.Controllers
                 });
             }
         }
+
+        [HttpGet("[action]")]
+        public ActionResult<IEnumerable<Drink>> Search(
+            string name, decimal? min_alcohol, decimal? max_alcohol, DrinkColors? color, DrinkTypes? type
+            )
+        {
+            try
+            {
+                IEnumerable<Drink> result = repository.Search(
+                    name, min_alcohol, max_alcohol, color, type
+                    );
+                if (result is null || result.Count() == 0) return NotFound();
+                return Ok(result);
+                //Méthode Sam
+                //if (result?.Any()) return Ok(result);
+                //return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    Method = nameof(Search),
+                    Message = ex.Message
+                });
+            }
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Bier.Models
 {
-    public class UserPublic
+    public class UserPublic : IDataModel<int>
     {
         public int Id { get; set; }
         [Required]
