@@ -103,8 +103,22 @@ namespace Bier.API.Controllers
 
         // DELETE api/<DrinksController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult<string> Delete(int id)
         {
+            try
+            {
+                Drink deletedDrink = repository.Delete(id);
+                if (deletedDrink is null) return NotFound();                
+                return Ok($"La {deletedDrink.Name} (id : {deletedDrink.Id}) a bien été supprimé.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    Method = nameof(Delete),
+                    Message = ex.Message
+                });
+            }
         }
     }
 }

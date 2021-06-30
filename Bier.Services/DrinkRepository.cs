@@ -16,7 +16,7 @@ namespace Bier.Services
         {
         }
 
-        public void Delete(int id)
+        public Drink Delete(int id)
         {
             Drink result = Get(id);
 
@@ -25,6 +25,8 @@ namespace Bier.Services
                 db.Drinks.Remove(result);
                 db.SaveChanges();
             }
+
+            return result;
         }
 
         public IEnumerable<Drink> Get()

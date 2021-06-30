@@ -10,6 +10,6 @@ namespace Bier.Services.Bases
     {        
         public Tentity Insert(Tentity entity);
         public Tentity Update(Tentity entity);
-        public void Delete(Tid id);
+        public Tentity Delete(Tid id);
     }
 }
