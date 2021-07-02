@@ -1,12 +1,13 @@
 ﻿using Bier.DataBase;
 using Bier.Models;
+using Bier.Services.Bases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Tools;
 
-namespace Bier.Services.Bases
+namespace Bier.Services
 {
     public class UserRepository : RepositoryBase, IUserRepository
     {
