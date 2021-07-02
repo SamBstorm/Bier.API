@@ -38,6 +38,7 @@ namespace Bier.API
 
             services.AddScoped<IDrinkRepository, DrinkRepository>();
             services.AddScoped<IBrewerRepository, BrewerRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddSwaggerGen(c =>
             {
